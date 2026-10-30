@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "test": "test/slug.test.ts::slugify > trims separators",
+      "check": "unit",
+      "owner": "@jackfrutaco",
+      "issue": "https://github.com/Tatastu-Labs/ci-skill-fixture/issues/1",
+      "reason": "qualification fixture: deliberately failing assertion",
+      "riskApproval": "@jackfrutaco",
+      "entered": "2026-10-30",
+      "review": "2026-11-13"
+    }
+  ]
+}
