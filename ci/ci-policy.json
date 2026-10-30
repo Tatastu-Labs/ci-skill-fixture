@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "maxAttempts": 2,
+  "checks": {
+    "static": {},
+    "unit": { "paths": ["src/**", "test/**"], "reports": { "shards": 2, "pattern": "unit-{shard}.xml" } },
+    "unit-report": { "follows": "unit" },
+    "e2e": { "paths": ["src/**", "e2e/**", "public/**"], "reports": { "files": ["e2e.xml"] } }
+  },
+  "fullOn": {
+    "paths": ["package.json", "package-lock.json", "*.config.*", ".node-version", "tsconfig.json", "wrangler.toml", "scripts/**"]
+  },
+  "noop": { "paths": ["docs/**", "README.md", "LICENSE"], "rationale": "documentation is not read by the build, tests or deploy" },
+  "critical": ["**auth**"],
+  "afterGate": ["build"]
+}
