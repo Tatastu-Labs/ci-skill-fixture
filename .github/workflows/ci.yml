@@ -158,6 +158,13 @@ jobs:
           retention-days: 14
           if-no-files-found: warn
 
+  extra-lint:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - run: echo extra
+      - run: exit 1
+
   # The one required check. It runs for every event and passes only when every
   # expected check succeeded, every omission has a recorded reason, and no job in
   # this run is missing from the policy.
